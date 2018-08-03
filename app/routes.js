@@ -34,6 +34,7 @@ routes.use((err, req, res, next) => {
     message: err.message,
     error: err,
   });
+  
 });
 
 module.exports = routes;
