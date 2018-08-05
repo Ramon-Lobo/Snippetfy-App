@@ -1,9 +1,13 @@
 module.exports = (sequelize, DataTypes) => {
-  const user = sequelize.define('User', {
+  const User = sequelize.define('User', {
     name: DataTypes.STRING,
     email: DataTypes.STRING,
     password: DataTypes.STRING,
   });
 
-  return user;
-}
+  User.associate = (models) => {
+    User.hasMany(models.Category);
+  };
+
+  return User;
+};
